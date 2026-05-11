@@ -1,0 +1,15 @@
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\bin\Debug\net9.0\Infrastructure.deps.json
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\bin\Debug\net9.0\Infrastructure.dll
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\bin\Debug\net9.0\Infrastructure.pdb
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\bin\Debug\net9.0\Core.dll
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\bin\Debug\net9.0\Core.pdb
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\obj\Debug\net9.0\Infrastructure.csproj.AssemblyReference.cache
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\obj\Debug\net9.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\obj\Debug\net9.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\obj\Debug\net9.0\Infrastructure.AssemblyInfo.cs
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\obj\Debug\net9.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\obj\Debug\net9.0\Infrastr.15EFFBFE.Up2Date
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\obj\Debug\net9.0\Infrastructure.dll
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\obj\Debug\net9.0\refint\Infrastructure.dll
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\obj\Debug\net9.0\Infrastructure.pdb
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\obj\Debug\net9.0\ref\Infrastructure.dll

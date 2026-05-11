@@ -1,0 +1,11 @@
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Core\bin\Debug\net9.0\Core.deps.json
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Core\bin\Debug\net9.0\Core.dll
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Core\bin\Debug\net9.0\Core.pdb
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Core\obj\Debug\net9.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Core\obj\Debug\net9.0\Core.AssemblyInfoInputs.cache
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Core\obj\Debug\net9.0\Core.AssemblyInfo.cs
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Core\obj\Debug\net9.0\Core.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Core\obj\Debug\net9.0\Core.dll
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Core\obj\Debug\net9.0\refint\Core.dll
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Core\obj\Debug\net9.0\Core.pdb
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Core\obj\Debug\net9.0\ref\Core.dll
