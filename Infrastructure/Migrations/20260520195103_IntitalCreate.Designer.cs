@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20260511185537_IntitalCreate")]
+    [Migration("20260520195103_IntitalCreate")]
     partial class IntitalCreate
     {
         /// <inheritdoc />
@@ -44,16 +44,15 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PicturalUrl")
+                    b.Property<string>("PictureUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("QuantityInStock")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("QuantityInStock")
+                        .HasColumnType("int");
 
                     b.Property<string>("Type")
                         .IsRequired()

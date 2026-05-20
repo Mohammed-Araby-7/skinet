@@ -13,3 +13,4 @@ C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\ski
 C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\obj\Debug\net9.0\refint\Infrastructure.dll
 C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\obj\Debug\net9.0\Infrastructure.pdb
 C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\obj\Debug\net9.0\ref\Infrastructure.dll
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\obj\Debug\net9.0\Infrastructure.sourcelink.json

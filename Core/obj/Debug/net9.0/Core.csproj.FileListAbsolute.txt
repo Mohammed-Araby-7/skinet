@@ -9,3 +9,4 @@ C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\ski
 C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Core\obj\Debug\net9.0\refint\Core.dll
 C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Core\obj\Debug\net9.0\Core.pdb
 C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Core\obj\Debug\net9.0\ref\Core.dll
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Core\obj\Debug\net9.0\Core.sourcelink.json
