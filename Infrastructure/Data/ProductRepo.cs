@@ -40,7 +40,7 @@ public class ProductRepo(StoreContext context) : IProductRepo
             query = sort switch
             {
                 "priceAsc" => query.OrderBy(x=> x.Price),
-                "PriceDesc" => query.OrderByDescending(x=> x.Price),
+                "priceDesc" => query.OrderByDescending(x=> x.Price),
                 _ => query.OrderBy(x=> x.Name)
             };
         }

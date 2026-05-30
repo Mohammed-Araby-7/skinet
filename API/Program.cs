@@ -18,6 +18,7 @@ builder.Services.AddDbContext<StoreContext>(o =>
     o.UseSqlServer(builder.Configuration.GetConnectionString("MyConn"));
 });
 builder.Services.AddScoped<IProductRepo,ProductRepo>();
+builder.Services.AddScoped(typeof(IGenericRepo<>),typeof(GenericRepo<>));   
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
