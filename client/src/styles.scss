@@ -17,8 +17,15 @@
   ))
 }
 
+.match-input-height{
+  height: var(--mat-form-field-container-height) !important;
+}
+
 .container{
-  @apply mx-auto px-6;
+  @apply mx-auto max-w-screen-2xl;
+}
+.text-primary{
+  @apply text-blue-700;
 }
 
 html {
