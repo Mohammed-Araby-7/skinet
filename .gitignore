@@ -4,6 +4,7 @@
 
 # Sensitive configuration
 API/appsettings.Development.json
+API/appsettings.json
 
 # Publish output
 bin/Publish/

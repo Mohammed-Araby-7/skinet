@@ -58,7 +58,6 @@ export class ShopComponent implements OnInit {
   {
     this.ShopService.getBrands();
     this.ShopService.getTypes();
-    console.log("thanks to araby");
     this.getProducts()
   }
 
