@@ -13,6 +13,7 @@ import { MatListModule, MatListOption, MatSelectionList, MatSelectionListChange 
 import { ShopParams } from '../../models/ShopParams';
 import { Pagination } from '../../models/pagination';
 import { FormsModule } from '@angular/forms';
+import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-shop',
@@ -33,7 +34,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './shop.component.scss',
 })  
 export class ShopComponent implements OnInit {
-   baseUrl = 'https://localhost:5001/api/'
+   baseUrl = environment.apiUrl;
   private dialogService = inject(MatDialog)
 
   private ShopService = inject(ShopService);
@@ -57,6 +58,7 @@ export class ShopComponent implements OnInit {
   {
     this.ShopService.getBrands();
     this.ShopService.getTypes();
+    console.log("thanks to araby");
     this.getProducts()
   }
 

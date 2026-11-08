@@ -23,6 +23,19 @@ public class BaseSpecification<T>(Expression<Func<T,bool>>?criteria): ISpecifica
     }
 
     public bool IsDistinct {get;private set;}
+
+    public List<Expression<Func<T, object>>> Includes {get;} = [];
+    public List<string> IncludeStrings {get;} = [];
+
+    protected void AddInclude(Expression<Func<T,object>> includeExpression)
+    {
+        Includes.Add(includeExpression);
+    }
+
+    protected void AddInclude(string includestring)
+    {
+        IncludeStrings.Add(includestring); //for thenInclude
+    }
     protected void AddOrderBy(Expression<Func<T,object>> OrderByExperssion)
     {
         OrderBy = OrderByExperssion;

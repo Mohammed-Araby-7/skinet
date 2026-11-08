@@ -1,18 +1,32 @@
 @if (product) {
-     <mat-card appearance="raised" [routerLink]="['/shop', product.id]" class="product-card">
-            <img src="{{product.pictureUrl}}" alt=" {{product.name}}"
-            class="rounded-t-lg">
-            <mat-card-content class="mt-2">
-                <h2 class="text-sm font-semibold uppercase">{{product.name}}</h2>
-                <p class="font-light">{{product.price | currency}}</p>
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-stroked-button class="w-full">
-                    <mat-icon>
-                        add_shopping_cart
-                    </mat-icon>
-                    Add to cart
-                </button>
-            </mat-card-actions>
-    </mat-card>
+  <mat-card appearance="raised" class="product-card">
+
+    <div [routerLink]="['/shop', product.id]" class="cursor-pointer">
+      <img
+        [src]="product.pictureUrl"
+        [alt]="product.name"
+        class="rounded-t-lg"
+      >
+
+      <mat-card-content class="mt-2">
+        <h2 class="text-sm font-semibold uppercase">
+          {{ product.name }}
+        </h2>
+        <p class="font-light">{{ product.price | currency }}</p>
+      </mat-card-content>
+    </div>
+
+    <mat-card-actions>
+      <button
+        mat-stroked-button
+        class="w-full"
+        type="button"
+        (click)="cartService.addItemToCart(product); $event.stopPropagation()"
+      >
+        <mat-icon>add_shopping_cart</mat-icon>
+        Add to cart
+      </button>
+    </mat-card-actions>
+
+  </mat-card>
 }

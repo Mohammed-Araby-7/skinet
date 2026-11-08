@@ -1,4 +1,5 @@
 using Core;
+using Core.Entities;
 using Core.interfaces;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -51,10 +52,6 @@ public class GenericRepo<T>(StoreContext context) : IGenericRepo<T> where T : Ba
         context.Set<T>().Remove(entity);
     }
 
-    public async Task<bool> SaveAllAsync()
-    {
-        return await context.SaveChangesAsync() > 0;   
-    }
 
     public void Update(T entity)
     {

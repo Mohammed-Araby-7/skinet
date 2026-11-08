@@ -1,3 +1,5 @@
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\bin\Debug\net8.0\Data\SeedData\delivery.json
+C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\bin\Debug\net8.0\Data\SeedData\products.json
 C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\bin\Debug\net8.0\Infrastructure.deps.json
 C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\bin\Debug\net8.0\Infrastructure.dll
 C:\Users\dell\Desktop\Forth-Year\Csharp\C-Sharp_MVC_.NET_Core\Skinet-Project\skinet\Infrastructure\bin\Debug\net8.0\Infrastructure.pdb

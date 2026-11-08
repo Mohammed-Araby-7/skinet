@@ -1,0 +1,39 @@
+<div class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm mb-4">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        
+        <!-- 1. Product Image -->
+        <a routerLink="/shop/{{item().productId}}" class="shrink-0">
+            <img src="{{item().pictureUrl}}" alt="product image" class="h-20 w-20 object-cover rounded">
+        </a>
+
+        <!-- 2. Product Name and Delete Action -->
+        <div class="flex-1 min-w-0 text-center sm:text-left">
+            <a routerLink="/shop/{{item().productId}}" class="font-medium hover:underline block truncate">
+                {{item().productName}}
+            </a>
+            <div class="mt-2 flex items-center justify-center sm:justify-start gap-4">
+                <button mat-button  class="text-sm" (click)="removeItemFromCart()">
+                    <mat-icon class="text-red-700!">delete</mat-icon>
+                    Delete
+                </button>
+            </div>
+        </div>
+
+        <!-- 3. Quantity Controls (Minus, Number, Plus) -->
+        <div class="flex items-center gap-2">
+            <button mat-icon-button (click)="decrementQuantity()">
+                <mat-icon class="text-red-600!">remove</mat-icon>
+            </button>
+            <div class="font-semibold text-xl w-8 text-center">{{item().quantity}}</div>
+            <button mat-icon-button (click)="incrementQuantity()">
+                <mat-icon class="text-green-600!">add</mat-icon>
+            </button>
+        </div>
+
+        <!-- 4. Price -->
+        <div class="text-right w-28">
+            <p class="font-bold text-xl">{{item().price | currency}}</p>
+        </div>
+
+    </div>
+</div>

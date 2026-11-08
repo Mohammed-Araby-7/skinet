@@ -1,3 +1,4 @@
+using System.Reflection;
 using System.Text.Json;
 using Core.Entities;
 using Infrastructure.Data;
@@ -9,16 +10,40 @@ public class StoreContextSeed
 {
     public static async Task SeedAsync(StoreContext context)
     {
-        // if there is not data inside the db
-        if(!context.Products.Any())
+       var path = Path.Combine(
+            AppContext.BaseDirectory,
+            "Data",
+            "SeedData"
+        );
+
+        // Seed Products
+        if (!context.Products.Any())
         {
-            var productData = await File.ReadAllTextAsync("../Infrastructure/Data/SeedData/products.json");
+            var productPath = Path.Combine(path, "products.json");
+
+            var productData = await File.ReadAllTextAsync(productPath);
+
             var products = JsonSerializer.Deserialize<List<Product>>(productData);
-            if(products == null) return;
+
+            if (products == null) return;
 
             context.Products.AddRange(products);
             await context.SaveChangesAsync();
-            
+        }
+
+        // Seed Delivery Methods
+        if (!context.DeliveryMethods.Any())
+        {
+            var deliveryPath = Path.Combine(path, "delivery.json");
+
+            var dmData = await File.ReadAllTextAsync(deliveryPath);
+
+            var methods = JsonSerializer.Deserialize<List<DeliveryMethod>>(dmData);
+
+            if (methods == null) return;
+
+            context.DeliveryMethods.AddRange(methods);
+            await context.SaveChangesAsync();
         }
     }
 }
