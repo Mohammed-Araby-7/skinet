@@ -1,2 +1,10 @@
+# .NET generated files
+**/bin/
+**/obj/
+
+# Sensitive configuration
 API/appsettings.Development.json
-API/appsettings.json
+
+# Publish output
+bin/Publish/
+API/bin/Publish/
