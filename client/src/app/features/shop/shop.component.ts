@@ -14,6 +14,7 @@ import { ShopParams } from '../../models/ShopParams';
 import { Pagination } from '../../models/pagination';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../../../environments/environment.development';
+import { EmptyStateComponent } from '../../shared/components/empty-state/empty-state.component';
 
 @Component({
   selector: 'app-shop',
@@ -28,7 +29,8 @@ import { environment } from '../../../environments/environment.development';
     MatListModule,
     MatPaginator,
     FormsModule,
-    MatIconButton
+    MatIconButton,
+    EmptyStateComponent
 ],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.scss',
@@ -39,7 +41,8 @@ export class ShopComponent implements OnInit {
 
   private ShopService = inject(ShopService);
 
-  shopParams = new ShopParams()
+  shopParams = new ShopParams();
+  pageSizeOptions = [5,10,15,20];
 
   products?:Pagination<Product>;
   
@@ -52,6 +55,10 @@ export class ShopComponent implements OnInit {
 
   ngOnInit(): void {
       this.intializeShop();
+  }
+  resetFilters(){
+    this.shopParams = new ShopParams();
+    this.getProducts();
   }
 
   intializeShop()
