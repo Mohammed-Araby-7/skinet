@@ -1,0 +1,215 @@
+
+<mat-tab-group class="bg-(--mat-sys-surface)">
+
+    <!-- ORDERS TAB -->
+    <mat-tab label="Orders">
+
+        <div class="flex justify-between items-center mt-2 mx-auto p-4">
+
+            <h2 class="text-2xl font-semibold">
+                Customer Orders
+            </h2>
+
+            <mat-form-field appearance="outline" class="mt-2">
+
+                <mat-label>Filter by status</mat-label>
+
+                <mat-select
+                    value="All"
+                    (selectionChange)="onFilterSelect($event)">
+
+                    @for (status of statusOptions; track status) {
+
+                        <mat-option [value]="status">
+                            {{ status }}
+                        </mat-option>
+
+                    }
+
+                </mat-select>
+
+            </mat-form-field>
+
+        </div>
+
+        <div class="px-4">
+
+            <table mat-table [dataSource]="dataSource">
+
+                <!-- ORDER ID -->
+                <ng-container matColumnDef="id">
+
+                    <th mat-header-cell *matHeaderCellDef>
+                        No.
+                    </th>
+
+                    <td mat-cell *matCellDef="let order">
+                        {{ order.id }}
+                    </td>
+
+                </ng-container>
+
+
+                <!-- BUYER EMAIL -->
+                <ng-container matColumnDef="buyerEmail">
+
+                    <th mat-header-cell *matHeaderCellDef>
+                        Buyer Email
+                    </th>
+
+                    <td mat-cell *matCellDef="let order">
+                        {{ order.buyerEmail }}
+                    </td>
+
+                </ng-container>
+
+
+                <!-- ORDER DATE -->
+                <ng-container matColumnDef="orderDate">
+
+                    <th mat-header-cell *matHeaderCellDef>
+                        Order Date
+                    </th>
+
+                    <td mat-cell *matCellDef="let order">
+                        {{ order.orderDate | date:'shortDate' }}
+                    </td>
+
+                </ng-container>
+
+
+                <!-- TOTAL -->
+                <ng-container matColumnDef="total">
+
+                    <th mat-header-cell *matHeaderCellDef>
+                        Total
+                    </th>
+
+                    <td mat-cell *matCellDef="let order">
+                        {{ order.total | currency }}
+                    </td>
+
+                </ng-container>
+
+
+                <!-- STATUS -->
+                <ng-container matColumnDef="status">
+
+                    <th mat-header-cell *matHeaderCellDef>
+                        Status
+                    </th>
+
+                    <td mat-cell *matCellDef="let order">
+                        {{ order.status }}
+                    </td>
+
+                </ng-container>
+
+
+                <!-- ACTIONS -->
+                <ng-container matColumnDef="actions">
+
+                    <th mat-header-cell *matHeaderCellDef>
+                        Actions
+                    </th>
+
+                    <td mat-cell *matCellDef="let order">
+
+                        <!-- View Order -->
+                        <button
+                            matTooltip="View order"
+                            mat-icon-button
+                            class="text-blue-500!"
+                            [routerLink]="['/orders', order.id]">
+
+                            <mat-icon>
+                                visibility
+                            </mat-icon>
+
+                        </button>
+
+
+                        <!-- Refund Order -->
+                        <button
+                            matTooltip="Refund order"
+                            mat-icon-button
+                            class="text-red-500! disabled:opacity-50"
+                            [disabled]="order.status === 'Refunded'"
+                            (click)="OpenConfirmDialog(order.id)">
+
+                            <mat-icon>
+                                undo
+                            </mat-icon>
+
+                        </button>
+
+                    </td>
+
+                </ng-container>
+
+
+                <!-- TABLE HEADER AND ROWS -->
+                <tr
+                    mat-header-row
+                    *matHeaderRowDef="displayColumns">
+                </tr>
+
+                <tr
+                    mat-row
+                    *matRowDef="let row; columns: displayColumns;">
+                </tr>
+
+            </table>
+
+
+            <!-- PAGINATION -->
+            <mat-paginator
+                [length]="totalItems"
+                [pageIndex]="orderParams.pageNumber - 1"
+                [pageSize]="orderParams.pageSize"
+                [pageSizeOptions]="[5, 10, 20]"
+                showFirstLastButtons
+                (page)="onPageChange($event)">
+            </mat-paginator>
+
+        </div>
+
+    </mat-tab>
+
+
+    <!-- CATALOG TAB -->
+    <mat-tab label="Catalog">
+
+        <div class="p-4">
+
+            <h2 class="text-2xl font-semibold">
+                Product Management
+            </h2>
+
+            <p class="text-gray-500 mt-2">
+                Manage products, brands, types and inventory.
+            </p>
+
+        </div>
+
+    </mat-tab>
+
+
+    <!-- CUSTOMER SERVICE TAB -->
+    <mat-tab label="Customer Service">
+
+        <div class="p-4">
+
+            <h2 class="text-2xl font-semibold">
+                Customer Service
+            </h2>
+
+            <p class="text-gray-500 mt-2">
+                Manage customer-related operations.
+            </p>
+
+        </div>
+
+    </mat-tab>
+
+</mat-tab-group>

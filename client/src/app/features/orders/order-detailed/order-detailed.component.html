@@ -5,7 +5,7 @@
                 <h2 class="text-2xl text-center font-semibold">
                 Order Summary for #{{order.id}}
 
-                <button routerLink="/orders" mat-stroked-button>Return to orders</button>
+                <button (click)="onReturnClick()" routerLink="/orders" mat-stroked-button>{{buttonText}}</button>
 
             </h2>
             </div>

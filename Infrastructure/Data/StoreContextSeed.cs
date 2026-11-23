@@ -1,15 +1,28 @@
 using System.Reflection;
 using System.Text.Json;
+using Core.Enitites;
 using Core.Entities;
 using Infrastructure.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace Infrastructure;
 
 
 public class StoreContextSeed
 {
-    public static async Task SeedAsync(StoreContext context)
+    public static async Task SeedAsync(StoreContext context , UserManager<AppUser> userManager)
     {
+        if(!userManager.Users.Any(x => x.UserName == "admin@test.com"))
+        {
+            var user = new AppUser
+            {
+                UserName = "admin@test.com",
+                Email = "admin@test.com"
+            };
+            await userManager.CreateAsync(user , "Pa$$w0rd");
+            await userManager.AddToRoleAsync(user , "Admin");
+        }
+
        var path = Path.Combine(
             AppContext.BaseDirectory,
             "Data",

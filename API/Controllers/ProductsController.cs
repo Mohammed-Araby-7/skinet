@@ -4,6 +4,7 @@ using Core.Entities;
 using Core.interfaces;
 using Core.spec;
 using Infrastructure.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,7 +13,7 @@ namespace API.Controllers;
 public class ProductsController(IUnitOfWork unit) :BaseApiController
 {
     
-
+    [Cache(600)]
     [HttpGet]
 
     public async Task<ActionResult<IEnumerable<Product>>> GetProducts([FromQuery]ProductSpecParams specParams)
@@ -21,7 +22,7 @@ public class ProductsController(IUnitOfWork unit) :BaseApiController
 
         return await CreatePagedResult(unit.Repo<Product>() ,spec ,specParams.PageIndex ,specParams.PageSize);
     }
-
+    [Cache(600)]
     [HttpGet("{id:int}")]//api/Product/2
 
     public async Task<ActionResult<Product>> GetProduct(int id)
@@ -31,6 +32,7 @@ public class ProductsController(IUnitOfWork unit) :BaseApiController
 
         return product;
     }
+    [Cache(10000)]
     [HttpGet("brands")]
 
     public async Task<ActionResult<IReadOnlyList<string>>> GetBrands()
@@ -39,7 +41,7 @@ public class ProductsController(IUnitOfWork unit) :BaseApiController
 
         return Ok(await unit.Repo<Product>().ListAsync(spec));
     }
-
+    [Cache(10000)]
     [HttpGet("types")]
 
     public async Task<ActionResult<IReadOnlyList<string>>> GetTypes()
@@ -48,7 +50,8 @@ public class ProductsController(IUnitOfWork unit) :BaseApiController
 
         return Ok(await unit.Repo<Product>().ListAsync(spec));
     }
-
+    [InvalidateCache("api/products|")]
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     public async Task<ActionResult<Product>> CreateProduct(Product product)
     {
@@ -62,6 +65,7 @@ public class ProductsController(IUnitOfWork unit) :BaseApiController
         return BadRequest("Problem Creating Product");
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPut("{id:int}")]
 
     public async Task<ActionResult> UpdateProduct(int id , Product product)
@@ -80,6 +84,7 @@ public class ProductsController(IUnitOfWork unit) :BaseApiController
         return BadRequest("Problem Updating the Product");
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpDelete("{id:int}")]
 
     public async Task<ActionResult> DeleteProduct(int id)

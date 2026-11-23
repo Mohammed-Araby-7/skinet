@@ -7,8 +7,13 @@
             >Home</a>
             <a routerLink="/shop" routerLinkActive="active" >Shop</a>
             <a routerLink="/test-error" routerLinkActive="active">Errors</a>
+            <a *appIsAdminDir routerLink="/admin" routerLinkActive="active">Admin</a>
         </nav>
+<!-- 
+        
+      // master-urchin-110007.upstash.io:6379, password=gQAAAAAAAa23AAIgcDJhYTJmZDcxOTkxZmM0NDJiYWQ3MDI2YzZlMWYwZmNhZA, ssl=true , abortConnection=False
 
+-->
         <div class="flex gap-3 align-middle">
             <a routerLink="cart" routerLinkActive="active" 
             matBadge="{{cartService.itemCount()}}"
