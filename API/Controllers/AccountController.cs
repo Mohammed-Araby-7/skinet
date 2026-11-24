@@ -46,21 +46,14 @@ public class AccountController(SignInManager<AppUser> signInManager) :BaseApiCon
         return NoContent();
     }
 
-
     [HttpGet("user-info")]
     public async Task<ActionResult> GetUserInfo()
     {
-        if (User.Identity?.IsAuthenticated != true)
-            return NoContent();
+        if(User.Identity?.IsAuthenticated == false) return NoContent();
 
-        var user = await signInManager.UserManager
-            .GetUserByEmailWithAddress(User);
+        var user = await signInManager.UserManager.GetUserByEmailWithAddress(User);
 
-        if (user == null)
-            return Unauthorized();
-
-        var roles = await signInManager.UserManager
-            .GetRolesAsync(user);
+        var roles = await signInManager.UserManager.GetRolesAsync(user);
 
         return Ok(new
         {
@@ -68,7 +61,7 @@ public class AccountController(SignInManager<AppUser> signInManager) :BaseApiCon
             user.LastName,
             user.Email,
             Address = user.Address?.toDto(),
-            Roles = await signInManager.UserManager.GetRolesAsync(user)
+            Roles = roles
         });
     }
 
