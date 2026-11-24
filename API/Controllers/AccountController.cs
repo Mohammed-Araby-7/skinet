@@ -49,9 +49,14 @@ public class AccountController(SignInManager<AppUser> signInManager) :BaseApiCon
     [HttpGet("user-info")]
     public async Task<ActionResult> GetUserInfo()
     {
-        if(User.Identity?.IsAuthenticated == false) return NoContent();
+        if (User.Identity?.IsAuthenticated != true)
+        return NoContent();
 
-        var user = await signInManager.UserManager.GetUserByEmailWithAddress(User);
+        var user = await signInManager.UserManager
+            .GetUserByEmailWithAddress(User);
+
+        if (user == null)
+            return Unauthorized();
 
         var roles = await signInManager.UserManager.GetRolesAsync(user);
 
