@@ -46,24 +46,30 @@ public class AccountController(SignInManager<AppUser> signInManager) :BaseApiCon
         return NoContent();
     }
 
+
     [HttpGet("user-info")]
     public async Task<ActionResult> GetUserInfo()
     {
-        if(User.Identity?.IsAuthenticated == false) return NoContent();
+        if (User.Identity?.IsAuthenticated != true)
+            return NoContent();
 
-        var user = await signInManager.UserManager.GetUserByEmailWithAddress(User);
+        var user = await signInManager.UserManager
+            .GetUserByEmailWithAddress(User);
 
+        if (user == null)
+            return Unauthorized();
 
-        return Ok(
-        new
+        var roles = await signInManager.UserManager
+            .GetRolesAsync(user);
+
+        return Ok(new
         {
             user.FirstName,
             user.LastName,
             user.Email,
             Address = user.Address?.toDto(),
-        Roles = User.FindFirstValue(ClaimTypes.Role)
-        }
-        );
+            Roles = roles
+        });
     }
 
     [HttpGet("auth-status")]
