@@ -68,7 +68,7 @@ public class AccountController(SignInManager<AppUser> signInManager) :BaseApiCon
             user.LastName,
             user.Email,
             Address = user.Address?.toDto(),
-            Roles = roles
+            Roles = await signInManager.UserManager.GetRolesAsync(user)
         });
     }
 
