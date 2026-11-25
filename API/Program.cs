@@ -77,12 +77,23 @@ app.MapFallbackToController("Index" , "Fallback");
 // app.MapFallbackToFile("index.html");
 try
 {
-    using var scope = app.Services.CreateScope();
-    var services = scope.ServiceProvider;
-    var context = services.GetRequiredService<StoreContext>();
-    var userManager = services.GetRequiredService<UserManager<AppUser>>();
-    await context.Database.MigrateAsync();
-    await StoreContextSeed.SeedAsync(context , userManager);
+        using var scope = app.Services.CreateScope();
+
+        var services = scope.ServiceProvider;
+
+        var context = services.GetRequiredService<StoreContext>();
+
+        var userManager = services.GetRequiredService<UserManager<AppUser>>();
+
+        var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+
+        await context.Database.MigrateAsync();
+
+        await StoreContextSeed.SeedAsync(
+            context,
+            userManager,
+            roleManager
+        );
 }
 catch(System.Exception ex)
 {
