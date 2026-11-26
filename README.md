@@ -1,12 +1,10 @@
 # Skinet Project Repository
 
-Welcome to the brand new version of the SkiNet app created for the Udemy training course available [here](https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular).
-
 This app is built using .Net 10 and Angular 22
 
 # Running the project
 
-You can see a live demo of this project [here](https://skinet-course.azurewebsites.net/).
+You can see a live demo of this project [here]([https://skinet-course.azurewebsites.net/](https://skinet-2026-dtfbhchka0d3hufv.westus3-01.azurewebsites.net/)).
 
 You can also run this app locally.  To run this project locally you will need to have installed:
 
