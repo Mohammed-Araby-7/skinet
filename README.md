@@ -15,7 +15,7 @@ You can also run this app locally.  To run this project locally you will need to
 
 ```bash
 # you will of course need git installed to run this
-git clone https://github.com/TryCatchLearn/skinet.git
+git clone https://github.com/Mohammed-Araby-7/skinet.git
 cd skinet
 ```
 
