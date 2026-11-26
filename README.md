@@ -108,8 +108,4 @@ You will then be able to browse the running app on https://localhost:4200
 ===
 If you are looking for the repository for the version of this app created on .Net 9.0 and Angular v20 then this is available here:
 
-https://github.com/TryCatchLearn/Skinet-2025
 
-Or the 2024 version is available here:
-
-https://github.com/TryCatchLearn/Skinet-2024
